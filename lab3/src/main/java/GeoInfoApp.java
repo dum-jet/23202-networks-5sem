@@ -28,7 +28,7 @@ public class GeoInfoApp {
     
     private CompletableFuture<String> getWeatherAndPlacesAsync(Point point) {
         CompletableFuture<String> weatherFuture = getWeatherAsync(point);
-        CompletableFuture<String> placesFuture = getPlacesAsync2(point);
+        CompletableFuture<String> placesFuture = getPlacesAsync(point);
         return weatherFuture.thenCombine(placesFuture, this::printSummary);
     }
 
@@ -108,7 +108,7 @@ public class GeoInfoApp {
         return allDone.thenApply(v -> futures.stream().map(CompletableFuture::join).toList());
     }
 
-    private CompletableFuture<String> getPlacesAsync2(Point point) {
+    private CompletableFuture<String> getPlacesAsync(Point point) {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 String data = fetchFromURL(constructPlacesOfInterestURL(point));
