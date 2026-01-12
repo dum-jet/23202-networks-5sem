@@ -14,9 +14,9 @@ public class GeoInfoApp {
     private final String locationName;
     private static final int MAX_PLACES_OF_INTEREST = 10;
 
-    private static final String GRAPH_HOPPER_API_KEY = "3bc92e19-116d-4210-bac1-68ba6500c246";
-    private static final String OPEN_WEATHER_API_KEY = "a254f3a146b094c217971baeabf1fdc2";
-    private static final String OPEN_TRIP_MAP_API_KEY = "5ae2e3f221c38a28845f05b652e5c598f66ba19252f4e43b6d506015";
+    private static final String GRAPH_HOPPER_API_KEY = "";
+    private static final String OPEN_WEATHER_API_KEY = "";
+    private static final String OPEN_TRIP_MAP_API_KEY = "";
 
     public GeoInfoApp(String input) {
         this.locationName = input.replace(" ", "_");
